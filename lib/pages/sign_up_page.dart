@@ -1,6 +1,7 @@
 import 'package:do_an_cuoi_ki/pages/home_page.dart';
 import 'package:do_an_cuoi_ki/pages/login_page.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../components/app_elevated_button.dart';
 import '../components/app_text_field.dart';
 import 'home_page.dart';
@@ -50,6 +51,14 @@ class _LoginPageState extends State<SignUpPage> {
         });
         return; 
       }
+
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      await prefs.setString('fullname', fullname);
+      await prefs.setString('email', email);
+      await prefs.setString('username', username);
+      await prefs.setString('password', password);
+
+
       _showSnackBar('Đăng kí thành công');
       Route route = MaterialPageRoute(
         builder: (context) => const LoginPage(),

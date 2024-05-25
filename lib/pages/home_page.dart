@@ -33,7 +33,7 @@ class _HomePageState extends State<HomePage> {
     Navigator.of(context).pop(); // Đóng drawer
     };
     return Scaffold(
-      appBar: CustomAppBar(title: 'NHÀ THUỐC XANH'),
+      appBar: CustomAppBar(title: 'MEDICAL | Trang chủ'),
           body: const Center(
         child: Text('Home Page'),
       ),

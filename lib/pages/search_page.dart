@@ -106,7 +106,7 @@ class _SearchPageState extends State<SearchPage> {
         ),
       
 
-    endDrawer: const AppDrawer(currentPage: 'InfoPage'),
+    endDrawer: const AppDrawer(currentPage: 'SearchPage'),
   );
   }
     Widget _addButton() {

@@ -3,6 +3,9 @@ import 'package:do_an_cuoi_ki/components/app_elevated_button.dart';
 import 'package:do_an_cuoi_ki/pages/home_page.dart';
 import 'package:do_an_cuoi_ki/pages/info_page.dart';
 import 'package:do_an_cuoi_ki/pages/login_page.dart';
+import 'package:do_an_cuoi_ki/pages/new_page.dart';
+import 'package:do_an_cuoi_ki/pages/setting_page.dart';
+import 'package:do_an_cuoi_ki/pages/support_page.dart';
 import 'package:flutter/material.dart';
 
 
@@ -73,21 +76,29 @@ class AppDrawer extends StatelessWidget {
               style: TextStyle(color: Color.fromARGB(255, 2, 165, 83)),
             ),
             onTap: () {
+              if (currentPage != 'NewPage') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const NewPage(),
+                  ),
+                );
+              }
             },
           ),
           ListTile(
-            leading: const Icon(Icons.person),
+            leading: const Icon(Icons.settings),
             title: const Text(
-              "Thông tin",
+              "Thiết Lập",
               style: TextStyle(color: Color.fromARGB(255, 2, 165, 83)),
             ),
             onTap: () {
               _closeDrawer();
-              if (currentPage != 'InfoPage') {
+              if (currentPage != 'SettingPage') {
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => InfoPage(),
+                    builder: (context) => SettingPage(),
                   ),
                 );
               }
@@ -100,6 +111,14 @@ class AppDrawer extends StatelessWidget {
               style: TextStyle(color: Color.fromARGB(255, 2, 165, 83)),
             ),
             onTap: () {
+               if (currentPage != 'SupportPage') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const SuppportPage(),
+                  ),
+                );
+              }
             },
           ),
           ListTile(
